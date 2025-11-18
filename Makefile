@@ -49,7 +49,6 @@ SCRIPT_FILES=\
   $(wildcard \
       $(_PROJECT)/*)
 NPM_FILES=\
-  "$(_PROJECT)" \
   "README.md" \
   "COPYING" \
   "AUTHORS.rst" \

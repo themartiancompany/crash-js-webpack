@@ -2,7 +2,7 @@
   "name":
     "crash-js-webpack",
   "version":
-    "0.0.1",
+    "0.0.2",
   "description":
     "Meta-module/package which can be required to automatically install modules needed to generate webpacks of projects depending on the Crash Javascript library.",
   "funding":
@@ -11,6 +11,8 @@
       "url":
         "https://patreon.com/tallero"
   },
+  "man":
+    "./man/crash-js-webpack.1",
   "files": [
     "AUTHORS.rst",
     "COPYING",
@@ -29,16 +31,16 @@
     "ur"
   ],
   "homepage":
-    "https://github.com/themartiancompany/crash-js-webpack",
+    "https://gitlab.com/tallero/crash-js-webpack",
   "bugs": {
     "url":
-      "https://github.com/themartiancompany/crash-js-webpack/issues"
+      "https://gitlab.com/tallero/crash-js-webpack/issues"
   },
   "repository": {
     "type":
       "git",
     "url":
-      "git+https://github.com/themartiancompany/crash-js-webpack.git"
+      "git+https://gitlab.com/tallero/crash-js-webpack.git"
   },
   "license":
     "AGPL-3.0-or-later",
