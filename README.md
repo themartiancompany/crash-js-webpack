@@ -19,17 +19,20 @@
 [comment]: <> (License along with this program.)
 [comment]: <> (If not, see <https://www.gnu.org/licenses/>.)
 
-# Crash JavaScript
+# Crash JavaScript Webpack ('crash-js-webpack')
 
-A collection of JavaScript utility functions.
-
-This library is being used by most of
-Human Instrumentality Project (HIP)
-JavaScript programs.
+Meta-module which can be required in order to
+automatically install the modules needed
+to include programs written using the
+[Crash Javascript](
+  https://github.com/themartiancompany/crash-js)
+in
+[Webpacks](
+  https://webpackjs.org).
 
 ## Installation
 
-The library in this source repo
+The module in this source repo
 can be installed from source using GNU Make.
 
 ```bash
@@ -39,12 +42,12 @@ make \
 
 or from the
 [NPM Registry](
-  https://www.npmjs.com/package/crash-js)
+  https://www.npmjs.com/package/crash-js-webpack)
 
 ```bash
 npm \
   install \
-    "crash-js"
+    "crash-js-webpack"
 ```
 
 The library is officially published on the
@@ -62,13 +65,13 @@ To install it from there just type
 
 ```bash
 ur \
-  libcrash-js
+  libcrash-js-webpack
 ```
 
 A censorable HTTP Github mirror of the recipe published there
 is hosted on
-[libcrash-js-ur](
-  https://github.com/themartiancompany/libcrash-js-ur).
+[libcrash-js-webpack-ur](
+  https://github.com/themartiancompany/libcrash-js-webpack-ur).
 Be aware it could go offline any time.
 
 ## Documentation
@@ -77,19 +80,10 @@ The manual can be accessed with
 
 ```bash
 man \
-  libcrash-js
+  crash-js-webpack
 ```
-
-An example program using both this library and the
-[Crash Bash](
-  https://github.com/themartiancompany/crash-bash)
-library,
-[ahsi](
-  https://github.com/themartiancompany/ahsi),
-is been made available as a submodule in the
-`examples` directory.
 
 ## License
 
-Crash JavaScript is released by Pellegrino Prevete
+The Crash JavaScript Webpack module is released by Pellegrino Prevete
 under the terms of the GNU Affero General Public License version 3.

@@ -1,10 +1,10 @@
 {
   "name":
-    "crash-js",
+    "crash-js-webpack",
   "version":
-    "0.1.65",
+    "0.0.1",
   "description":
-    "Crash Javascript library.",
+    "Meta-module/package which can be required to automatically install modules needed to generate webpacks of projects depending on the Crash Javascript library.",
   "funding":
     { "type":
         "patreon",
@@ -15,34 +15,30 @@
     "AUTHORS.rst",
     "COPYING",
     "README.md",
-    "eslint.config.mjs",
-    "crash-js",
-    "crash-js.js",
-    "examples",
-    "package.json",
-    "webpack.config.cjs"
+    "package.json"
   ],
-  "man":
-    "./man/libcrash-js.1",
   "keywords": [
     "crash-bash",
+    "crash-js",
     "dogeos",
     "opfs",
     "fs",
     "themartiancompany",
+    "tmcfs",
+    "webpack",
     "ur"
   ],
   "homepage":
-    "https://github.com/themartiancompany/crash-js",
+    "https://github.com/themartiancompany/crash-js-webpack",
   "bugs": {
     "url":
-      "https://github.com/themartiancompany/crash-js/issues"
+      "https://github.com/themartiancompany/crash-js-webpack/issues"
   },
   "repository": {
     "type":
       "git",
     "url":
-      "git+https://github.com/themartiancompany/crash-js.git"
+      "git+https://github.com/themartiancompany/crash-js-webpack.git"
   },
   "license":
     "AGPL-3.0-or-later",
@@ -55,38 +51,24 @@
         "https://github.com/tallero"
   },
   "devDependencies": {
+  },
+  "dependencies": {
+    "buffer":
+      "^6.0.3",
+    "crash-js":
+      "^0.1.65",
     "fs":
       "npm:@themartiancompany/fs@^0.0.2",
-    "eslint":
-      "^9.32.0",
     "opfs":
       "npm:@themartiancompany/opfs@^2.0.3",
     "path":
       "npm:@themartiancompany/std__path@^1.1.1",
     "stream-browserify":
-      "^3.0.0",
-    "web-worker":
-      "1.5.0",
-    "webpack":
-      "^5.102.1",
-    "webpack-cli":
-      "^6.0.1"
-  },
-  "dependencies": {
-    "yargs":
-      "18.0.0"
+      "^3.0.0"
   },
   "type":
     "commonjs",
-  "main":
-    "crash-js/crash-js",
   "scripts":
     { "build":
-        "npm run lint && npm run build-lib",
-      "build-lib":
-        "npx webpack --mode 'production' --config 'webpack.config.cjs' --stats-error-details",
-      "lint":
-        "npx eslint .",
-      "test":
-        "echo \"Error: no test specified\" && exit 1" }
+        "npm install" }
 }

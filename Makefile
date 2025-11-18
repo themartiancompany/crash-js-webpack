@@ -20,7 +20,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 PREFIX ?= /usr/local
-_PROJECT=crash-js
+_PROJECT=crash-js-webpack
 DOC_DIR=$(DESTDIR)$(PREFIX)/share/doc/$(_PROJECT)
 USR_DIR=$(DESTDIR)$(PREFIX)
 BIN_DIR=$(DESTDIR)$(PREFIX)/bin
@@ -53,36 +53,11 @@ NPM_FILES=\
   "README.md" \
   "COPYING" \
   "AUTHORS.rst" \
-  "eslint.config.mjs" \
-  "package.json" \
-  "webpack.config.cjs"
+  "package.json"
 
 all: build-man build-npm
 
-check: eslint
-
-eslint:
-
-	npm \
-	  run \
-	    lint
-
-install: install-scripts install-doc install-examples install-man
-
-install-scripts:
-
-	$(_INSTALL_EXE) \
-	  "$(_PROJECT)/$(_PROJECT)" \
-	  "$(LIB_DIR)/$(_PROJECT)"
-	$(_INSTALL_EXE) \
-	  "$(_PROJECT)/fs-utils" \
-	  "$(LIB_DIR)/fs-utils"
-	$(_INSTALL_EXE) \
-	  "$(_PROJECT)/utils" \
-	  "$(LIB_DIR)/utils"
-	$(_INSTALL_EXE) \
-	  "$(_PROJECT)/fs-worker" \
-	  "$(LIB_DIR)/fs-worker"
+install: install-npm
 
 build-man:
 
@@ -90,17 +65,13 @@ build-man:
 	  -p \
 	  "build/man"
 	rst2man \
-	  "man/lib$(_PROJECT).1.rst" \
-	  "build/man/lib$(_PROJECT).1"
+	  "man/$(_PROJECT).1.rst" \
+	  "build/man/$(_PROJECT).1"
 
 build-npm:
 
-	mkdir \
-	  -p \
-	  "build/man"
-	rst2man \
-	  "man/lib$(_PROJECT).1.rst" \
-	  "build/lib$(_PROJECT).1"
+	make \
+	  build-man
 	_version="$$( \
 	  npm \
 	    view \
@@ -113,7 +84,8 @@ build-npm:
 	cd \
 	  "build"; \
 	npm \
-	  install; \
+	  install \
+	    --save-dev; \
 	npm \
 	  run \
 	    build; \
@@ -122,15 +94,6 @@ build-npm:
 	mv \
 	  "$(_PROJECT)-$${_version}.tgz" \
 	  ".."
-
-install-examples:
-
-	cd \
-	  "examples/ahsi"; \
-	make \
-	 all; \
-	make \
-	  install;
 
 install-npm:
 
@@ -152,24 +115,9 @@ install-npm:
 	  "$(LIB_DIR)"; \
 	ln \
 	  -s \
-	  "$(NODE_DIR)/$(_PROJECT)" \
-	  "$(LIB_DIR)/$(_PROJECT)" || \
+	  "$(NODE_DIR)" \
+	  "$(LIB_DIR)" || \
 	true; \
-	ln \
-	  -s \
-	  "$(NODE_DIR)/fs-utils" \
-	  "$(LIB_DIR)/fs-utils" || \
-	true; \
-	ln \
-	  -s \
-	  "$(NODE_DIR)/fs-worker" \
-	  "$(LIB_DIR)/fs-worker" || \
-	true; \
-	ln \
-	  -s \
-	  "$(NODE_DIR)/utils" \
-	  "$(LIB_DIR)/utils" || \
-	true
 
 publish-npm:
 

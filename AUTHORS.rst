@@ -1,5 +1,5 @@
 =====================================
-Crash JavaScript Authors
+Crash JavaScript Webpack Authors
 =====================================
 
 * Pellegrino Prevete <pellegrinoprevete@gmail.com>
