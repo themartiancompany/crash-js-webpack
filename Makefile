@@ -58,6 +58,14 @@ all: build-man build-npm
 
 install: install-npm
 
+clean:
+
+	cd \
+	  "build"; \
+	rm \
+	  -rf \
+	  "node_modules"
+
 build-man:
 
 	mkdir \
