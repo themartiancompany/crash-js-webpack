@@ -58,7 +58,7 @@
     "buffer":
       "^6.0.3",
     "crash-js":
-      "^0.1.92",
+      "^0.1.95",
     "fs":
       "npm:@themartiancompany/fs@^0.0.2",
     "opfs":
