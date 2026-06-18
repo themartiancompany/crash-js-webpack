@@ -82,7 +82,7 @@ build-npm:
 	_version="$$( \
 	  npm \
 	    view \
-	      "$$(pwd)" \
+	      "$${PWD}" \
 	      "version")"; \
 	cp \
 	  -r \
