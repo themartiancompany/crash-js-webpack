@@ -2,7 +2,7 @@
   "name":
     "crash-js-webpack",
   "version":
-    "0.0.63",
+    "0.0.64",
   "description":
     "Meta-module/package which can be required to automatically install modules needed to generate webpacks of projects depending on the Crash Javascript library.",
   "funding":
@@ -59,7 +59,7 @@
     "buffer":
       "^6.0.3",
     "libcrash-js":
-      "npm:crash-js@^1000000001.1000000000000001.1000000000000001",
+      "npm:crash-js@^10000000001.1000000000000001.1000000000000001",
     "tmcfs":
       "npm:@themartiancompany/fs@^0.0.21",
     "opfs":
